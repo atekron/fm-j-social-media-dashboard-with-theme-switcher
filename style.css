@@ -1,23 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
-/* #### Dark Theme
-
-- Very Dark Blue (BG): hsl(230, 17%, 14%)
-- Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
-- Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
-- Desaturated Blue (Text): hsl(228, 34%, 66%)
-- White (Text): hsl(0, 0%, 100%)
-- Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
-
-#### Light Theme
-
-- White (BG): hsl(0, 0%, 100%)
-- Very Pale Blue (Top BG Pattern): hsl(225, 100%, 98%)
-- Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
-- Dark Grayish Blue (Text): hsl(228, 12%, 44%)
-- Very Dark Blue (Text): hsl(230, 17%, 14%)
-- Toggle: hsl(230, 22%, 74%) */
-
 :root {
   --text-up: hsl(163, 72%, 41%);
   --text-down: hsl(356, 69%, 56%);
@@ -27,12 +9,24 @@
   --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
   --youtube: hsl(348, 97%, 39%);
 
+  /* light theme   */
   --bg: hsl(0, 0%, 100%);
   --bg-top: hsl(225, 100%, 98%);
   --bg-card: hsl(227, 47%, 96%);
   --text-desaturated: hsl(228, 12%, 44%);
   --text: hsl(230, 17%, 14%);
   --toggle: hsl(230, 22%, 74%);
+  --toggle-thumb: flex-end;
+}
+
+.dark-mode {
+  --bg: hsl(230, 17%, 14%);
+  --bg-top: hsl(232, 19%, 15%);
+  --bg-card: hsl(228, 28%, 20%);
+  --text-desaturated: hsl(228, 34%, 66%);
+  --text: hsl(0, 0%, 100%);
+  --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --toggle-thumb: flex-start;
 }
 
 *,
@@ -69,6 +63,16 @@ body::before {
   margin: 2rem auto;
 }
 
+.up {
+  color: var(--text-up);
+  font-size: 0.8rem;
+}
+
+.down {
+  color: var(--text-down);
+  font-size: 0.8rem;
+}
+
 /* header section */
 .header {
   margin-bottom: 1rem;
@@ -102,13 +106,13 @@ body::before {
 }
 
 .theme__toggle-bg {
-  background-color: var(--toggle);
+  background: var(--toggle);
   border-radius: 2rem;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: var(--toggle-thumb);
   cursor: pointer;
 }
 
@@ -164,4 +168,95 @@ body::before {
   border-top: 0.4rem solid var(--youtube);
 }
 
+.stats__followers > h2 {
+  color: var(--text);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.stats__followers > p {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.stats__account,
+.stats__today {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  /* color: var(--text-desaturated); */
+}
+
+.stats__account > span,
+.stats__today span {
+  margin-right: 0.5rem;
+}
+
+.stats__account img,
+.stats__today img {
+  display: block;
+}
+
 /* overview */
+
+.overview {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview__title {
+  color: var(--text-desaturated);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.overviev__card {
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  width: 20rem;
+  height: 8rem;
+  background-color: var(--bg-card);
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.overviev__card img {
+  display: block;
+}
+
+.overview__metric {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overview__metric {
+  color: var(--text-desaturated);
+  font-weight: 700;
+}
+
+.overview__numbers {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.overview__numbers {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.overview__numbers span {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.overview__numbers img {
+  margin-right: 0.2rem;
+}
