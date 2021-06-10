@@ -53,7 +53,7 @@ body::before {
   position: absolute;
   content: "";
   width: 100%;
-  height: 15rem;
+  height: 18rem;
   background-color: var(--bg-top);
   border-radius: 0 0 2rem 2rem;
   z-index: -1;
@@ -116,6 +116,10 @@ body::before {
   cursor: pointer;
 }
 
+.theme__toggle-bg:hover {
+  background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
 .theme__toggle-thumb {
   background-color: var(--bg-card);
   margin: 0.3rem;
@@ -142,6 +146,12 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.stats__card:hover {
+  filter: brightness(0.9);
 }
 
 .facebook {
@@ -154,14 +164,16 @@ body::before {
 
 .instagram-border {
   background: var(--instagram);
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   padding-top: 0.4rem;
   margin: 1.5rem auto;
+  width: 20rem;
 }
 
 .instagram {
   margin: 0;
   border-radius: 0 0 0.3rem 0.3rem;
+  height: 11.6rem;
 }
 
 .youtube {
@@ -222,6 +234,12 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.overviev__card:hover {
+  filter: brightness(0.9);
 }
 
 .overviev__card img {
@@ -259,4 +277,74 @@ body::before {
 
 .overview__numbers img {
   margin-right: 0.2rem;
+}
+
+@media screen and (min-width: 700px) {
+  /* body::before {
+    height: 18rem;
+  } */
+
+  .container {
+    max-width: 72%;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header__text {
+    border-bottom: none;
+    padding: 1rem 0;
+  }
+
+  .header__title {
+    font-size: 2rem;
+  }
+
+  .theme {
+    display: flex;
+    align-items: center;
+  }
+
+  .theme__mode {
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .facebook {
+    margin-left: 0;
+  }
+
+  .youtube {
+    margin-right: 0;
+  }
+
+  .stats__card {
+    height: 15rem;
+  }
+
+  .instagram {
+    height: 14.6rem;
+  }
+
+  .overview__title {
+    font-size: 2rem;
+  }
+
+  .overviev__card {
+    height: 9rem;
+    margin: 1rem 0;
+  }
+
+  .overview__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
