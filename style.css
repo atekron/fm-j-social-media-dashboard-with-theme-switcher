@@ -285,7 +285,7 @@ body::before {
   } */
 
   .container {
-    max-width: 72%;
+    max-width: 88rem;
   }
   .header {
     display: flex;
